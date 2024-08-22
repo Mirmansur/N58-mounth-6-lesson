@@ -1,5 +1,4 @@
 const Home = () => {
-  // Ma'lumotlarni ob'ekt sifatida aniqlash
   const data = {
     products: [
       {
@@ -72,31 +71,51 @@ const Home = () => {
   return (
     <div className="Home bg-gray-100 min-h-screen p-8">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {data.products.map((product, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-lg rounded-lg overflow-hidden"
+        <div className="flex flex-col justify-center">
+          <div className="search flex items-center justify-between mb-10">
+            <input
+              type="text"
+              placeholder="Search.."
+              className="p-3 shadow-lg outline-none rounded-md"
+            />
+            <select
+              name=""
+              id=""
+              className="p-3 shadow-lg outline-none rounded-lg"
             >
-              <img
-                className="w-full h-48 object-cover"
-                src={product.image}
-                alt={product.title}
-              />
-              <div className="p-4">
-                <h2 className="text-xl font-bold mb-2">{product.title}</h2>
-                <p className="text-gray-600 mb-1">
-                  <strong>Population:</strong> {product.population}
-                </p>
-                <p className="text-gray-600 mb-1">
-                  <strong>Region:</strong> {product.region}
-                </p>
-                <p className="text-gray-600 mb-1">
-                  <strong>Capital:</strong> {product.capital}
-                </p>
+              <option value="">Filter by Region</option>
+              <option value="Europe">Europe</option>
+              <option value="Americas">Americas</option>
+              <option value="South America">South America</option>
+              <option value="Central Asia">Central Asia</option>
+            </select>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {data.products.map((product, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-lg rounded-lg overflow-hidden"
+              >
+                <img
+                  className="w-full h-48 object-cover"
+                  src={product.image}
+                  alt={product.title}
+                />
+                <div className="p-4">
+                  <h2 className="text-xl font-bold mb-2">{product.title}</h2>
+                  <p className="text-gray-600 mb-1">
+                    <strong>Population:</strong> {product.population}
+                  </p>
+                  <p className="text-gray-600 mb-1">
+                    <strong>Region:</strong> {product.region}
+                  </p>
+                  <p className="text-gray-600 mb-1">
+                    <strong>Capital:</strong> {product.capital}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
