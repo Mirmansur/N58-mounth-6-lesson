@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Home = () => {
   const data = {
     products: [
@@ -92,9 +94,10 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {data.products.map((product, index) => (
-              <div
+              <Link
+                href={`/singil/${index}`}
                 key={index}
-                className="bg-white shadow-lg rounded-lg overflow-hidden"
+                className="bg-white shadow-lg rounded-lg overflow-hidden block"
               >
                 <img
                   className="w-full h-48 object-cover"
@@ -113,7 +116,7 @@ const Home = () => {
                     <strong>Capital:</strong> {product.capital}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
