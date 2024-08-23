@@ -5,6 +5,8 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class", // or 'media' based on your preference
+
   theme: {
     extend: {
       fontFamily: {
@@ -12,6 +14,9 @@ module.exports = {
       },
       colors: {
         darkBackground: "rgba(32, 44, 54, 1)",
+      },
+      screens: {
+        sm: "375px", // Bu yerda siz 375px breakpointni belgilaysiz
       },
     },
   },
